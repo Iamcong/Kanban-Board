@@ -117,7 +117,63 @@ document.addEventListener("DOMContentLoaded", function() {
 
 >**WARNING**: Một số trường hợp sẽ để trước thẻ đóng \</body\>. Tuy nhiên nó sẽ thường gây ra các vấn đề về code hoặc hiệu suất tải trang.
 
+## async(đồng bộ) and defer(trì hoãn)
+> Có 2 giải pháp cho khối lệnh JS tránh xảy ra lỗi.
+1. async
+> async script sẽ tải các khối script mà không rendering trang và sẽ thực thi nó ngay sau khi script được tải xuống. không có sự đảm bảo nào cho tập lệnh sẽ chạy theo bất kỳ thứ tự nào. Chỉ có điều chúng sẽ ngăn phần còn lại của trang hiển thị. 
 
+> Sử dụng async tốt nhất khi các tập lệnh chạy độc lập với nhau và không phụ thuộc vào nhau.
+
+> ví dụ:
+```js
+<script async src="js/vendor/jquery.js"></script>
+
+<script async src="js/script2.js"></script>
+
+<script async src="js/script3.js"></script>
+```
+Ở ví dụ này bạn sẽ không thể dựa vào thứ tự các khối js sẽ được tải. jquery.js cũng có thể được tải trước hoặc sau 2 tệp còn lại và trong trường hợp này, jquery sẽ có thể bị lỗi vì `jquery` sẽ không được định nghĩa tại thời điểm JS chạy.
+
+2. defer
+> Sẽ chạy script theo thứ tự xuất hiện trong trang và thực thi chúng ngay sau khi script và nội dung được tải.
+
+```html
+<script defer src="js/vendor/jquery.js"></script>
+
+<script defer src="js/script2.js"></script>
+
+<script defer src="js/script3.js"></script>
+```
+Tất cả script với thuộc tính defer sẽ được tải theo thứ tự xuất hiện trong trang. Vì vậy, trong ví dụ 2 các file sẽ được tải tuần tự từ trên xuống dưới.
+
+### `Tổng kết:`
+  - Nếu code của bạn không cần chờ phân tích cú pháp (parsing) và có thể chạy độc lập(independently) mà không phụ thuộc (dependencies) thì sử dụng async.
+  - Ngược lại, nếu code của bạn cần phải chờ xử lý và phụ thuộc vào các đoạn mã script khác tải chúng sử dụng defer và đặt tương ứng của họ \<script\> theo thứ tự bạn muốn thực thi chúng.
+
+## Comment
+Cũng như HTML, CSS. Js cũng có cách viết comment code để trình duyệt chấp nhận nó. Nó đơn giản, giới thiệu ý nghĩa cho đoạn mã của bạn (nếu sau một thời gian quay trở lại code thì bạn sẽ vẫn hiểu nó). Comments là rất tuyệt vời, và sẽ sử dụng thường xuyên.
+- Có 2 cách comments:
+  1. Trên một dòng
+  ```js
+    // Iam a comment
+  ```
+  2. Trên nhiều dòng:
+  ```js
+    /*
+      I am also
+      a comment
+    */
+  ```
+- Ví dụ dễ hiểu:
+```js
+// Function: creates a new paragraph and appends it to the bottom of the HTML body.
+
+function createParagraph() {
+  let para = document.createElement('p');
+  para.textContent = 'You clicked the button!';
+  document.body.appendChild(para);
+}
+```
 
 
 
