@@ -70,7 +70,52 @@ Trình tự :
 - Mặt khác, mã được chạy trên máy chủ thì kết quả đã được tải và hiển thị trên trình duyệt Ta thấy một số Server-side được chạy bởi 1 vài ngôn ngữ phổ biến như : PHP, Python, Ruby... và JS (Sử dụng node.js).
 - Bạn có thể tìm hiểu về Server-side chạy bằng node.js tại đây : [Dynamic Websites – Server-side programming](https://developer.mozilla.org/en-US/docs/Learn/Server-side).
 ## Dynamic versus Static code
+> Javascript được thêm trong HTML giống như cách thức thêm CSS. Trong khi CSS nhận \<link\> || \<style\> thì Script chỉ nhận \<Script\>
+* Có 2 cách để thêm JS vào trong HTML:
+    1. Lồng code vào trong cặp thẻ \<script\>\</script\>
+    ```html
+    <script>
 
+        // JavaScript goes here
+
+    </script>
+    ```
+    2. Thêm bằng liên kết src:
+    ```html
+    <script src="script.js" defer></script>
+    ```
+
+* Chúng ta có thể thêm JS ở bất cứ nơi nào trong HTML, và thường xuất hiện khi sử lý sự kiện:
+    
+    Trong thẻ HTML
+    ```html
+        <button onclick="createParagraph()">Click me!</button>
+    ```
+## Script loading strategies
+> Chiến lược tải tập lệnh
+
+- Có một số vấn đề liên quan đến tải các lệnh trong JS. Dường như nó ko hề đơn giản. Có một vấn đề chung thường xảy ra trong tất cả các trang HTML trong tiến trình xuất hiện.
+- Nếu đang sử dụng JavaScript để thao tác các phần tử trên trang (hoặc chính xác hơn là [Document Object Model](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents#The_document_object_model) - DOM), code sẽ không chạy được vì tiến trình của JS sẽ chạy trước HTML.
+- Trong ví dụ trước ta thấy các mã Script chỉ được bao bọc bởi thẻ \<Script\>. Điều này có thể làm đoạn mã JS đó sẽ chạy không như chúng ta mong đợi.
+- Để đảm bảo điều trên ko xảy ra và trong hầu hết các đoạn mã code trong JS chúng ta sẽ thấy:
+```js
+document.addEventListener("DOMContentLoaded", function() {
+  ...
+});
+```
+> Điều này có nghĩa là: <br/>
+> Khi nội dung được tải xong **(DOMContentLoaded)** thì mới thêm các sự kiện **(addEventListener)** trong vòng bao.
+
+> Trong đó:<br/>
+> addEventListener: nghe ngóng sự kiện.<br/>
+> DOMContentLoaded: nội dung được tải xong.<br/>
+
+> Chú ý:<br/>
+> Trong một số trường hợp bên ngoài (sử dụng src) chúng ta sẽ cần đến **defer - sự hoãn lại** 
+> Tuy nhiên, chúng ta sẽ không dùng defer cho giải pháp nội bộ, vì defer chỉ trong cho các tập lệnh bên ngoài.
+
+
+>**WARNING**: Một số trường hợp sẽ để trước thẻ đóng \</body\>. Tuy nhiên nó sẽ thường gây ra các vấn đề về code hoặc hiệu suất tải trang.
 
 
 
