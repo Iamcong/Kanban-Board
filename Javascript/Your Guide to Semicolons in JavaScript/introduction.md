@@ -62,7 +62,7 @@ Trình tự :
 1. Đầu tiên nó sẽ chạy dòng 1 và đính kèm 1 sự kiện nghe ngóng ở dòng 3 khi thẻ p được click thì hàm updateName() sẽ được chạy. (Kiểu tái sử dụng của một khối trong JS được gọi là function). Hỏi tên người dùng mới, sau đó, nó sẽ tự update tên và hiển thị.
 2. Ngược lại, nếu ta thay đổi `para.addEventListener('click', updateName);` trước dòng 1 thì sẽ có lỗi xảy ra. vì biến para là chưa được định nghĩa.
 ## Interpreted versus compiled code
-> Js là ngôn ngữ bậc nhẹ.
+> Js là ngôn ngữ rất nhẹ.
 
 ## Server-side versus client-side code
 > Server-side vs Client-side
