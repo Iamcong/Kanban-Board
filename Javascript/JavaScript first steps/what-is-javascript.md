@@ -1,0 +1,1 @@
+Được định nghĩa trong 'Your Guide to Semicolons in JavaScript'/introduction.md
