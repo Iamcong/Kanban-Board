@@ -92,5 +92,71 @@ let person = {
         {language: 'Tieng anh'}
     ];
 ```
+## Dynamic typing
+> JavaScript là 1 ngôn ngữ động, nghĩa là nó sẽ tự động hiểu kiểu của biến mà ko cần phải định nghĩa trước.
 
+```js 
+let myString='hello world' 
+```
+> Ngay cả khi giá trị chứa số, nó vẫn là một chuỗi, vì vậy hãy cẩn thận:
+```js
+let myNumber = '500'; // oops, this is still a string
+typeof myNumber;
+myNumber = 500; // much better — now this is a number
+typeof myNumber;
+```
+
+# Functions
+```js
+function checkGuess() {
+  alert('I am a placeholder');
+}
+```
+> Functions là khối lệnh được tái sử dụng nhiều lần, sử dụng những đoạn code giống nhau.
+- Cú pháp: 
+```js
+function functionName() {
+    // code here...
+}
+``` 
+# Operators - Toán tử
+Các toán tử JavaScript cho phép chúng tôi thực hiện các bài kiểm tra, làm toán, nối các chuỗi với nhau và những thứ khác.
+- Các Toán tử:
+    === : 2 vế phải hoàn toàn giống nhau
+    !== : 2 vế là khác nhau
+    <   : nhỏ hơn
+    >   : lớn hơn
+
+# Conditionals - Điều kiện
+Giá trị trả về của điều kiện là kiểu `Bool` chỉ có đúng (true) hoặc sai (false).
+```js
+let a = 1, b = -1;
+a > b;              // output true
+true === false;     // output false
+6 === '6';          // output false
+6 == '6';           // output true
+``` 
+# Events - Sự kiện
+- Sự kiện là điều gì đó sẽ xảy ra khi người dùng hoặc trình duyệt tác động vào như click, cuộn chuôt, load trang, thay đổi tab, tắt tab, tải lại trang, xem video ...
+- Các cấu trúc đang lắng nghe sự kiện được gọi là `event listeners`. Và các function được gọi trong sự kiện thì được gọi là `event handlers` (xử lý sự kiện).
+```js
+guessSubmit.addEventListener('click', checkGuess);
+```
+Trong đó: 
+    guessSubmit : nơi lắng nghe sự kiện.
+    addEventListener: sự kiện xảy ra khi `click`.
+    checkGuess: tên function.
+
+# Loops - Vòng lặp
+Cú pháp:
+
+```js
+for (let i = 1 ; i < 21 ; i++) { 
+    console.log(i)
+}
+// output 1 2 3 ... 20
+```
+Điều này cho phép đoạn code trên sẽ console log trên trình duyệt 20 lần
+
+[xem thêm tại đây](https://developer.mozilla.org/vi/docs/Learn/JavaScript/First_steps/A_first_splash).
 
