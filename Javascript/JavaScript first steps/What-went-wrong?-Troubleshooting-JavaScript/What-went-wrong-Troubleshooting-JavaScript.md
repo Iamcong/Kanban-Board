@@ -10,6 +10,7 @@
         `Logic errors`  - Lỗi logic
     
 ## Fixing syntax errors
+<img src="../images/Fixing-syntax-errors.png" title="Fixing syntax errors"><br/>
 1. Để biết lỗi xuất hiện từ đâu, bạn sẽ phải mở 
     - Chuột phải -> `inspect`.
     - Hoặc Ctrl + Shift + C hoặc phím F12.
@@ -23,4 +24,14 @@
     3. `Learn more` một liên kết đến MDN trang để giải thích lỗi vừa thông báo.
     4. Tên của tệp JavaScript, liên kết đến tab Trình gỡ lỗi của các công cụ dành cho nhà phát triển. Nếu bạn theo liên kết này, bạn sẽ thấy dòng chính xác nơi lỗi được tô sáng.
     5. Liệt kê lỗi xuất phát ở đâu, cụ thể là `dòng nào : ký tự nào`.
+3. Nếu bạn trông thấy lỗi dòng 86: 
+```js
+guessSubmit.addeventListener('click', checkGuess);
+```
+4. Thì thông báo lỗi là `guessSubmit.addeventListener is not a function`. Điều này có nghĩa là function `addeventListener` chưa được bạn hoặc JS định nghĩa. 
+    -> Nếu không chắc chắn những function, quy tắc mình vừa viết, bạn có thể tìm kiếm theo **mdn tên-tính-năng (name-of-feature)**.
+5. Trong hàm trên đã bị sai lỗi chính tả, nghĩa là `addeventListener` phải là `addEventListener`.
+    -> Vì JS phân biệt hoa - thường.
+
+## Syntax errors round two (Lỗi cú pháp vòng 2 ) :))
 
