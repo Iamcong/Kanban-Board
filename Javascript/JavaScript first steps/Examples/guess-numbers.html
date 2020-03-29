@@ -24,7 +24,7 @@
 
   <body>
       <h1>Number guessing game</h1>
-
+      <a href="https://github.com/mdn/learning-area/blob/master/javascript/introduction-to-js-1/troubleshooting/number-game-errors.html" target="_blank">Bạn có thể xem code ở đây:</a> 
       <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or less. We'll tell you if your guess was too high or too low.</p>
 
 <div class="form">
@@ -45,7 +45,7 @@
 
   const guesses = document.querySelector('.guesses');
   const lastResult = document.querySelector('.lastResult');
-  const lowOrHi = document.querySelector('lowOrHi');
+  const lowOrHi = document.querySelector('.lowOrHi');
   const guessSubmit = document.querySelector('.guessSubmit');
   const guessField = document.querySelector('.guessField');
 
@@ -90,7 +90,7 @@
 	  resetButton = document.createElement('button');
 	  resetButton.textContent = 'Start new game';
 	  document.body.appendChild(resetButton);
-	  resetButton.addeventListener('click', resetGame);
+	  resetButton.addEventListener('click', resetGame);
   }
 
   function resetGame() {
