@@ -73,4 +73,73 @@ j = i++;
 (i is 2, j is 1)
 ```
 ## Toán tử gán
+Là những toán tử gán giá trị cho biến. Toán tử đơn giản nhất là `=`, rất nhiều lần. hiểu đơn giản là nó sẽ gán giá trị bên phải cho biến bên bên trái.
+```js
+var x = 3; // x giữ giá trị 3
+var y = 4; // y giữ giá trị 4
+x = y; // x giờ giữ giá trị giống hệt với y, 4
+```
+Tôi sẽ giới thiệu cho bạn 4 toán tử gán thông dụng nhất: `+=`, `-=`, `*=`, `/=` tương ứng như:
+    - `+=`: `x = x + 1`
+    - `-=`: `x = x - 1`
+    - `*=`: `x = x * 1`
+    - `/=`: `x = x / 1`
+## Học chủ động: định cỡ của hộp canvas
+```js
+let x = 50; let y = 50;
+
+// Edit the two lines below here ONLY
+x = 50;
+y = 50;
+
+ctx.fillStyle = 'green';
+ctx.fillRect(10, 10, x, y);
+```
+Hãy chủ động copy đoạn code trên và chỉnh sửa giá trị được chỉ định x, y để xem thay đổi và cách vận hành của nó, không cần quan tâm đến các chức năng hay thuật toán nhé. Ý tôi nói là phép gán :)
+
+## Toán tử so sánh
+Để trả về kết quả kiểu `bool (true / false)`.
+`===` : bằng tuyệt đối        -  Kiểm tra xem liệu hai giá trị trái phải có giống hệt nhau hay không. vd: `5 === '5' // result: false`
+`!==` : không bằng tuyệt đối  -  Kiểm tra xem liệu hai giá trị trái phải không giống hệt nhau hay không. vd: `5 !== '5' // result: true`
+`<`   : nhỏ hơn               -  Kiểm tra xem giá trị bên trái có nhỏ hơn giá trị bên phải hay không. vd: `5 < 6 // result: true`
+`>`   : lớn hơn               -  Kiểm tra xem giá trị bên trái có lơn hơn giá trị bên phải hay không. vd: `6 > 5 // result: true`
+`<=`  : nhỏ hơn hoặc bằng     -  Kiểm tra xem giá trị bên trái có nhỏ hơn hoặc bằng giá trị bên phải hay không. vd: `3 <= 2 // result: false`
+`>=`  : lớn hơn hoặc bằng     -  Kiểm tra xem giá trị bên trái có lớn hơn hoặc bằng giá trị bên phải hay không. vd: `5 >= 4 // result: true`
+
+> Đôi khi chúng ta sẽ thấy một số trường hợp sẽ sử dụng `==` và `!=`, toán tử này sẽ kiểm tra sự giống nhau về giá trị nhưng không kiểm tra sự giống nhau về kiểu dữ liệu.
+
+```js
+3 == '3' // true
+3 === '3' // false
+```
+
+Toán tử so sánh rất hữu ích và chúng được sử dụng rất rộng rãi trong chương trình của bạn, như:
+    + Hiển thị nhãn ký tự chính xác tuỳ thuộc liệu một chức năng nào đó đang bật hay tắt
+    + Hiển thị hộp thoại trò chơi kết thúc khi một trò chơi kết thúc hoặc hộp thoại chiến thắng khi đạt được chiến thắng trong trò chơi
+    + Hiển thị câu chào mừng hợp với dịp lễ/ hội nào đó
+    + Phóng to / thu nhỏ bản đồ tuỳ theo nút nào được nhấn
+
+```html
+<button>Start machine</button>
+<p>The machine is stopped.</p>
+```
+```js
+var btn = document.querySelector('button');
+var txt = document.querySelector('p');
+
+btn.addEventListener('click', updateBtn);
+
+// Toggle
+function updateBtn() {
+  if (btn.textContent === 'Start machine') {
+    btn.textContent = 'Stop machine';
+    txt.textContent = 'The machine has started!';
+  } else {
+    btn.textContent = 'Start machine';
+    txt.textContent = 'The machine is stopped.';
+  }
+}
+// Tạo file .html rồi thử nó để thấy nó.
+```
+
 
