@@ -91,7 +91,7 @@ Biến name chính là context và điều này nó sẽ kết nối với chu�
 ```js
 '1' + '2'; // Output: "12"
 ```
-3. Nếu bạn có 1 `biến kiểu` `Number` bạn muốn chuyển (convert) đến 1 `string` và ngược lại làm như sau:
+3. Nếu bạn có 1 `biến`  kiểu `Number` bạn muốn chuyển (convert) đến 1 `string` và ngược lại làm như sau:
 - `Number` sẽ convert bất kỳ điều gì được thông qua trong 1 số. Nếu nó có thể:
     ```js
     var myString = '123';
